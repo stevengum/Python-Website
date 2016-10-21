@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Buddies: Trip {{trip.destination}}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'travels/css/style.css' %}"  title="no title"  charset="utf-8">
+</head>
+<body>
+    <div>
+        <div id="header">
+            <h6><a href="{% url 'travels:home' %}">Home</a></h6>
+            <h6><a href="{% url 'user:logout' %}">Logout</a></h6>
+        </div>
+        <!-- end header -->
+        <div id="main_content">
+            <h1>{{trip.destination}}</h1>
+            <ul>
+                <li>Planned by: <h6>{{trip.planner_id.name}}</h6></li>
+                <li>Description: <h6>{{trip.description}}</h6></li>
+                <li>Travel Date From: <h6>{{trip.start_date}}</h6></li>
+                <li>Travel Date To: <h6>{{trip.end_date}}</h6></li>
+            </ul>
+            <h3>Other user's joining the trip:</h3>
+            <ul>
+                {% for guest in guests %}
+
+                    <li><h6>{{guest.name}}</h6></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="footer">
+            <!-- empty header-->
+        </div>
+    </div>
+
+</body>
+</html>

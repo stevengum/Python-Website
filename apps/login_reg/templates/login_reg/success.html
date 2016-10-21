@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login or Registration Success!</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Success! Welcome, {{user.first_name}} {{user.last_name}}!</h1>
+            <h5>Successfully registered (or logged in)!</h5>
+
+
+                <h1>Welcome back {{user.first_name}}!</h1>
+                <ul>
+                
+                </ul>
+
+            <a href="{% url 'user_login:logout' %}">Return</a>
+        </div>
+    </div>
+</body>
+</html>

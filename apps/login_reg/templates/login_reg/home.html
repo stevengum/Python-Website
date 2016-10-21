@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Home</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome back {{user.first_name}}!</h1>
+        <div>
+            <form action="/create_data">
+                <h4>What day is it today?<input type="text" name="today"></h4>
+                <h4>Choose one of the following food!
+                    <select name="food" id="">
+                        <option value=""> </option>
+                        <option value="Sushi">Sushi</option>
+                        <option value="Fried Chicken">Fried Chicken</option>
+                        <option value="Tteokbokki">Tteokbokki</option>
+                        <option value="Hamburger">Hamburger</option>
+                    </select>
+                </h4>
+                <h4>What day is it tomorrow? <input type="text" name="tomorrow"></h4>
+                <h4>Did you go to the Kanye West concert on Oct 19, 2016? <input type="text" name="kanye"></h4>
+                <h4>Who is your favorite instructor?<input type="text" name="fav_instructor"></h4>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

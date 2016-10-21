@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Buddies: New Trip!</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'travels/css/style.css' %}"  title="no title"  charset="utf-8">
+</head>
+<body>
+    <div>
+        <div id="header">
+            <h6><a href="{% url 'travels:home' %}">Home</a></h6>
+            <h6><a href="{% url 'user:logout' %}">Logout</a></h6>
+        </div>    <!-- end header -->
+        <div id="main_content">
+            <h1 class="greetings">Add a Trip</h1>
+            <form action="{% url 'travels:add_trip' %}" method="post">
+                {% csrf_token %}
+                <!-- <input type="hidden" name="planner_id" value="{{request.session.user.id}}"> -->
+                <h4>Destination:</h4>
+                    <input type="text" name="destination">
+                <h4>Description:</h4>
+                    <input type="text" name="description">
+                <h4>Travel Date From:</h4>
+                    <input type="text" name="start_date">
+                <h4>Travel Date To:</h4>
+                    <input type="text" name="end_date">
+                    <input type="submit" value="Add">
+            </form>
+            {% for message in messages %}
+                {{message.message}}
+            {% endfor %}
+        </div>
+        <div id="footer">
+            <!-- empty footer -->
+        </div>
+    </div>
+
+
+</body>
+</html>
